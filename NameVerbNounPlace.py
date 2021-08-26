@@ -1,0 +1,7 @@
+Name = input("Name: ")
+Verb = input("Verb: ")
+Noun = input("Noun: ")
+Place = input("Place: ")
+print("One day, ", Name, Verb, "to", Place, "to see the ", Noun)
+print("Press enter to end the program")
+input()
