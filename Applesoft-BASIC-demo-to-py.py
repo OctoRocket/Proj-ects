@@ -4,7 +4,7 @@ def clear():
         os.system("cls")
     else:
         os.system("clear")
-def madlibs():
+def madlibs_10():
     Name = input("Name: ")
     Verb = input("Verb: ")
     Noun = input("Noun: ")
@@ -59,7 +59,7 @@ def element_choice():
     elif choice == 9:
         pass
     elif choice == 10:
-        pass
+        madlibs_10()
     elif choice == 11:
         pass
     elif choice == 12:
