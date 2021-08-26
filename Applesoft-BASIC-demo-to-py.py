@@ -1,3 +1,4 @@
+import random
 import os
 def clear():
     if os.name == 'nt':
@@ -12,6 +13,23 @@ def madlibs_10():
     print("One day,", Name, Verb, "to", Place, "to see the", Noun)
     print("Press enter to end the program")
     input()
+def guess_my_number_4():
+    print("GUESS MY NUMBER")
+    print("I'm picking a number between 1 and 100...")
+    
+    x = random.randint(1,100)
+    correct = False
+    while correct == False:
+        print("Your guess?")
+        y = input()
+        if y > x:
+            print("Too high")
+        elif y < x:
+            print("Too low")
+        elif y == x:
+            print("Got it!")
+        else:
+            print("?REENTER")
 def element_choice():
     print("(0) Exit program")
     print("(1) GOSUB/RETURN/POP")
