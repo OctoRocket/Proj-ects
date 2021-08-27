@@ -1,5 +1,6 @@
 import random
 import os
+from time import sleep
 def clear():
     if os.name == 'nt':
         os.system("cls")
@@ -16,7 +17,7 @@ def madlibs_10():
 def guess_my_number_4():
     print("GUESS MY NUMBER")
     print("I'm picking a number between 1 and 100...")
-    
+    sleep(0.5)
     x = random.randint(1,100)
     correct = False
     while correct == False:
@@ -28,6 +29,7 @@ def guess_my_number_4():
             print("Too low")
         elif y == x:
             print("Got it!")
+            return("Won")
         else:
             print("?REENTER")
 def element_choice():
