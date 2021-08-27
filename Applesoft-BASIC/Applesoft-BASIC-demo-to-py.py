@@ -39,6 +39,28 @@ def guess_my_number_4():
             return("Won")
         else:
             print("?REENTER")
+def guess_your_number_5():
+    min_guess = 1
+    max_guess = 100
+    while True:
+        try:
+            number = int(input("Pick a number from 1 to 100, then press Enter: "))
+        except ValueError:
+            print("?REENTER")
+        while True:
+            guess=random.randint(min_guess,max_guess)
+            print("I guessed:",guess)
+            response = input("Enter 1 for too high, -1 for too low, and 0 for got it ")
+            if response == "1":
+                max_guess = guess-1
+                print("ok")
+            elif response == "-1":
+                min_guess = guess+1
+                print("ok")
+            elif response == "0":
+                print("Yay!")
+                input("Press ENTER")
+                return("Won")
 def gosub_return_pop_emulation_1():
     clear()
     print("#110 GOSUB 150")
@@ -59,6 +81,17 @@ def fibbonocci():
         n1 = n2
         n2 = n1_plus_n2
         time.sleep(0.25)
+def basic_io_2():
+    clear()
+    print("at line 200")
+    A = input("Pick a number: ")
+    print(A)
+    if A==A:
+        print("TRUE")
+    elif A!=A:
+        print("FALSE")
+    print()
+    input("Press ENTER")
 def element_choice():
     print("(1) GOSUB/RETURN/POP")
     print("(2) Basic I/O, IF/THEN")
@@ -91,9 +124,7 @@ def element_choice():
     elif choice == 1:
         gosub_return_pop_emulation_1()
     elif choice == 2:
-        pass
-    elif choice == 2:
-        pass
+        basic_io_2()
     elif choice == 3:
         pass
     elif choice == 4:
