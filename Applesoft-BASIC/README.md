@@ -1,0 +1,1 @@
+A translation of the DEMOS Basic file available @ https://www.calormen.com/jsbasic/ into python
