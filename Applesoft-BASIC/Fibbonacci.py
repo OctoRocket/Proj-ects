@@ -1,9 +1,9 @@
 import time
-number_1 = 0
-number_2 = 1
+n1 = 0
+n2 = 1
 while True:
-    print(number_1)
-    number_1_plus_number_2 = number_1 + number_2
-    number_1 = number_2
-    number_2 = number_1_plus_number_2
-    time.sleep(1)
+    print(n1)
+    n1_plus_n2 = n1 + n2
+    n1 = n2
+    n2 = n1_plus_n2
+    time.sleep(0.25)
