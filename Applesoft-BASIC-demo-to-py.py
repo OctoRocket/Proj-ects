@@ -55,7 +55,11 @@ def element_choice():
     print("(19) DOS WRITE/APPEND")
     print("(20) ONERR ... RESUME")
     print("(21) CHR$ Tests")
-    choice = input("Enter option")
+    try:
+        choice = int(input("Enter option: "))
+    except ValueError:
+        return(ValueError)
+    print("You chose:", choice)
     if choice == 0:
         exit("Ended")
     elif choice == 1:
