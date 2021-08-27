@@ -7,6 +7,7 @@ def clear():
     else:
         os.system("clear")
 def madlibs_10():
+    clear()
     Name = input("Name: ")
     Verb = input("Verb: ")
     Noun = input("Noun: ")
@@ -15,14 +16,19 @@ def madlibs_10():
     print("Press enter to end the program")
     input()
 def guess_my_number_4():
+    clear()
     print("GUESS MY NUMBER")
     print("I'm picking a number between 1 and 100...")
     sleep(0.5)
     x = random.randint(1,100)
-    correct = False
-    while correct == False:
+    while True:
         print("Your guess?")
-        y = input()
+        while True:
+            try:
+                y = int(input())
+                break
+            except ValueError:
+                print("Try again!")
         if y > x:
             print("Too high")
         elif y < x:
@@ -32,8 +38,18 @@ def guess_my_number_4():
             return("Won")
         else:
             print("?REENTER")
+def gosub_return_pop_emulation_1():
+    clear()
+    print("#110 GOSUB 150")
+    print("#110 #150 RETURN")
+    print("#150 GOSUB 160")
+    print("GOSUB 190")
+    print("POP")
+    print("RETURN")
+    print()
+    print("Press enter:")
+    input()
 def element_choice():
-    print("(0) Exit program")
     print("(1) GOSUB/RETURN/POP")
     print("(2) Basic I/O, IF/THEN")
     print("(3) Fibbonacci Sequence")
@@ -63,7 +79,7 @@ def element_choice():
     if choice == 0:
         exit("Ended")
     elif choice == 1:
-        pass
+        gosub_return_pop_emulation_1()
     elif choice == 2:
         pass
     elif choice == 2:
@@ -71,7 +87,7 @@ def element_choice():
     elif choice == 3:
         pass
     elif choice == 4:
-        pass
+        guess_my_number_4()
     elif choice == 5:
         pass
     elif choice == 6:
@@ -106,6 +122,8 @@ def element_choice():
         pass
     elif choice == 21:
         pass
+    else:
+        exit()
 while True:
     element_choice()
     clear()
