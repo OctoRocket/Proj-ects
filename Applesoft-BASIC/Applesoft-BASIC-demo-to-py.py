@@ -72,7 +72,7 @@ def gosub_return_pop_emulation_1():
     print()
     print("Press enter:")
     input()
-def fibbonocci():
+def fibbonocci_3():
     n1 = 0
     n2 = 1
     while True:
@@ -126,7 +126,7 @@ def element_choice():
     elif choice == 2:
         basic_io_2()
     elif choice == 3:
-        pass
+        fibbonocci_3()
     elif choice == 4:
         guess_my_number_4()
     elif choice == 5:
