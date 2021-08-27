@@ -1,4 +1,3 @@
-from time import sleep
 # x = 0
 # while True:
 #     sleep(1)
@@ -15,4 +14,3 @@ while True:
     tmp=n1+n2
     n1=n2
     n2=tmp
-    sleep(1)
