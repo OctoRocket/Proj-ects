@@ -1,4 +1,4 @@
 # Test-of-the-learn-py
-*Now with madlibs!*
+*Now with more then just madlibs!*
 Sus
 Wener
