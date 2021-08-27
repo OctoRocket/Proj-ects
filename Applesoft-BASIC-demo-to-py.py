@@ -19,10 +19,14 @@ def guess_my_number_4():
     print("I'm picking a number between 1 and 100...")
     sleep(0.5)
     x = random.randint(1,100)
-    correct = False
-    while correct == False:
+    while True:
         print("Your guess?")
-        y = input()
+        while True:
+            try:
+                y = int(input())
+                break
+            except ValueError:
+                print("Try again!")
         if y > x:
             print("Too high")
         elif y < x:
@@ -33,7 +37,6 @@ def guess_my_number_4():
         else:
             print("?REENTER")
 def element_choice():
-    print("(0) Exit program")
     print("(1) GOSUB/RETURN/POP")
     print("(2) Basic I/O, IF/THEN")
     print("(3) Fibbonacci Sequence")
@@ -71,7 +74,7 @@ def element_choice():
     elif choice == 3:
         pass
     elif choice == 4:
-        pass
+        guess_my_number_4()
     elif choice == 5:
         pass
     elif choice == 6:
@@ -106,6 +109,8 @@ def element_choice():
         pass
     elif choice == 21:
         pass
+    else:
+        exit()
 while True:
     element_choice()
     clear()
