@@ -49,6 +49,17 @@ def gosub_return_pop_emulation_1():
     print()
     print("Press enter:")
     input()
+def basic_io_2():
+    clear()
+    print("at line 200")
+    A=input("Pick a number: ")
+    print(A)
+    if A==A:
+        print("TRUE")
+    elif A!=A:
+        print("FALSE")
+    print()
+    input("Press ENTER to continue ")
 def element_choice():
     print("(1) GOSUB/RETURN/POP")
     print("(2) Basic I/O, IF/THEN")
@@ -83,7 +94,7 @@ def element_choice():
     elif choice == 2:
         pass
     elif choice == 2:
-        pass
+        basic_io_2()
     elif choice == 3:
         pass
     elif choice == 4:
