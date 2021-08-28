@@ -1,6 +1,2 @@
 # Test-of-the-learn-py
-Fard
-Sus
-amogus
-wener
-has Port
+This has the port of the applesoft BASIC demo and will maybe have other things later
