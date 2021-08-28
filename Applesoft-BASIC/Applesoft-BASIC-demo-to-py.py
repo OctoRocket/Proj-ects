@@ -80,7 +80,7 @@ def fibbonocci_3():
         n1_plus_n2 = n1 + n2
         n1 = n2
         n2 = n1_plus_n2
-        time.sleep(0.25)
+        time.sleep(0.15)
 def basic_io_2():
     clear()
     print("at line 200")
@@ -152,7 +152,7 @@ def element_choice():
     elif choice == 4:
         guess_my_number_4()
     elif choice == 5:
-        pass
+        guess_your_number_5()
     elif choice == 6:
         pass
     elif choice == 7:
