@@ -2,7 +2,6 @@ import time
 import random
 import os
 from time import sleep
-secret = 0
 def clear():
     if os.name == 'nt':
         os.system("cls")
@@ -149,6 +148,60 @@ def blackjack_secret_1():
             print("Invalid!")
     print("Ending...")
     input("Press any button to end...")
+    return(0)
+def nim_secret_2():
+    total_coins = 12
+    print("Starting coins:", total_coins)
+    def player_turn(total_coins):
+        while True:
+            while True:
+                try:
+                    coins_to_take_away = int(input("How many coins would you like to take away? "))
+                    break
+                except ValueError:
+                    print("Try again!")
+            if coins_to_take_away > 3:
+                print("That is too many!")
+            elif coins_to_take_away < 1:
+                print("That is too few!")
+            elif coins_to_take_away > total_coins:
+                print("You are trying to take away more coins then there are left!")
+            else:
+                total_coins = total_coins - coins_to_take_away
+                break
+        return(total_coins)
+    def computer_turn(total_coins):
+        if total_coins < 4:
+            coins_to_take_away = total_coins
+            total_coins = total_coins - coins_to_take_away
+        else:
+            coins_to_take_away = random.randint(1,3)
+            total_coins = total_coins - coins_to_take_away
+        print("The computer took away", coins_to_take_away, "coins!")
+        return(total_coins)
+    def win_check_player(total_coins):
+        if total_coins == 0:
+            print("The player wins!")
+            return(0)
+        else:
+            print("There are", total_coins, "total coins left.")
+            return(total_coins)
+    def win_check_computer(total_coins):
+        if total_coins == 0:
+            print("The computer wins!")
+            return(0)
+        else:
+            print("There are", total_coins, "total coins left.")
+            return(total_coins)
+    while True:
+        total_coins = player_turn(total_coins)
+        total_coins = win_check_player(total_coins)
+        if total_coins == 0:
+            return()
+        total_coins = computer_turn(total_coins)
+        total_coins = win_check_computer(total_coins)
+        if total_coins == 0:
+            return()
 def guess_your_number_5():
     min_guess = 1
     max_guess = 100
@@ -169,7 +222,7 @@ def guess_your_number_5():
                 if should_win == True:
                     print("You lied! I guessed your number!")
                     sleep(1)
-                    return()
+                    return(0)
                 else:
                     max_guess = guess-1
                     print("ok")
@@ -177,15 +230,16 @@ def guess_your_number_5():
                 if should_win == True:
                     print("You lied! I guessed your number!")
                     sleep(1)
-                    ()
+                    return(0)
                 else:
                     min_guess = guess+1
                     print("ok")
             elif response == "0":
                 print("Yay!")
                 input("Press ENTER")
-                exit("Won")
+                return("Won")
 def element_choice():
+    secret = 0
     print("(1) GOSUB/RETURN/POP")
     print("(2) Basic I/O, IF/THEN")
     print("(3) Fibbonacci Sequence")
@@ -215,6 +269,7 @@ def element_choice():
     if choice == -1:
         print("You have unlocked the bonus demos! These aren't in the origional demo but we have decided to add it anyway!")
         print("(1) blackjack")
+        print("(2) Nim")
         try:
             choice = int(input("Enter option: "))
         except ValueError:
@@ -224,6 +279,11 @@ def element_choice():
             blackjack_secret_1()
             choice = "secret"
             secret = 1
+            return(0)
+        if choice == 2:
+            nim_secret_2()
+            choice = "secret"
+            return(0)
         else:
             exit()
     if choice == 0:
@@ -271,12 +331,12 @@ def element_choice():
     elif choice == 21:
         pass
     elif choice == "secret":
-        if secret == 1:
-            print("you are sus")
-        else:
-            print("cheeter")
-            exit()
+        print("you are sus")
+        return(0)
     else:
+        if secret == 1:
+            print("seecart unlokned")
+            time.sleep(0.05)
         exit()
 while True:
     element_choice()

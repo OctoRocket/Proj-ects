@@ -1,7 +1,5 @@
 import random
 
-## THIS CODE NEEDS TO BE MADE INTO A CLASS BEFORE IT CAN BE USED IN THE Applesoft-BASIC DEMO BONUS DEMOS
-
 total_coins = 12
 print("Starting coins:", total_coins)
 def player_turn(total_coins):
