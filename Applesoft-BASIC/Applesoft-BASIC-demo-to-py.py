@@ -156,13 +156,27 @@ def guess_your_number_5():
         while True:
             guess=random.randint(min_guess,max_guess)
             print("I guessed:",guess)
+            if guess == number:
+                should_win = True
+            else:
+                should_win = False
             response = input("Enter 1 for too high, -1 for too low, and 0 for got it ")
             if response == "1":
-                max_guess = guess-1
-                print("ok")
+                if should_win == True:
+                    print("You lied! I guessed your number!")
+                    sleep(1)
+                    return()
+                else:
+                    max_guess = guess-1
+                    print("ok")
             elif response == "-1":
-                min_guess = guess+1
-                print("ok")
+                if should_win == True:
+                    print("You lied! I guessed your number!")
+                    sleep(1)
+                    ()
+                else:
+                    min_guess = guess+1
+                    print("ok")
             elif response == "0":
                 print("Yay!")
                 input("Press ENTER")
