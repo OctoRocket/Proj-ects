@@ -97,7 +97,7 @@ def blackjack_secret_1():
     while start_loop:
         start = input("Do you want to play blackjack? (y/n)")
         if start == "n":
-            exit("n == start")
+            return("start == n")
         elif start == "y":
             print("Ok!")
             time.sleep(0.2)
@@ -204,6 +204,7 @@ def element_choice():
         print("You chose:", choice)
         if choice == 1:
             blackjack_secret_1()
+            choice = "secret"
         else:
             exit()
     if choice == 0:
@@ -249,6 +250,8 @@ def element_choice():
     elif choice == 20:
         pass
     elif choice == 21:
+        pass
+    elif choice == "secret":
         pass
     else:
         exit()
