@@ -266,7 +266,8 @@ def element_choice():
     elif choice == 21:
         pass
     elif choice == "secret":
-        pass
+        print("you are sus")
+        exit()
     else:
         exit()
 while True:
