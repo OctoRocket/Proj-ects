@@ -332,7 +332,7 @@ def element_choice():
         pass
     elif choice == "secret":
         print("you are sus")
-        return(0)
+        exit(0)
     else:
         if secret == 1:
             print("seecart unlokned")
