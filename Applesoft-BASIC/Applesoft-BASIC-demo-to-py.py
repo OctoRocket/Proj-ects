@@ -84,14 +84,17 @@ def fibbonocci_3():
 def basic_io_2():
     clear()
     print("at line 200")
-    A = input("Pick a number: ")
+    try:
+        A = input("Pick a number: ")
+    except ValueError:
+        print("?REENTER")
     print(A)
     if A==A:
         print("TRUE")
     elif A!=A:
         print("FALSE")
     print()
-    input("Press ENTER")
+    input("Press ENTER:")
 def blackjack_secret_1():
     start_loop = True
     while start_loop:
