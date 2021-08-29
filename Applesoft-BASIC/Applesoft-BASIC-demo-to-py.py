@@ -2,6 +2,7 @@ import time
 import random
 import os
 from time import sleep
+secret = 0
 def clear():
     if os.name == 'nt':
         os.system("cls")
@@ -219,6 +220,7 @@ def element_choice():
         if choice == 1:
             blackjack_secret_1()
             choice = "secret"
+            secret = 1
         else:
             exit()
     if choice == 0:
@@ -266,7 +268,11 @@ def element_choice():
     elif choice == 21:
         pass
     elif choice == "secret":
-        print("you are sus")
+        if secret == 1:
+            print("you are sus")
+        else:
+            print("cheeter")
+            exit()
     else:
         exit()
 while True:
