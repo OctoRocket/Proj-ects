@@ -2,6 +2,9 @@ import time
 import random
 import os
 from time import sleep
+
+secret = 0
+
 def clear():
     if os.name == 'nt':
         os.system("cls")
@@ -238,8 +241,23 @@ def guess_your_number_5():
                 print("Yay!")
                 input("Press ENTER")
                 return("Won")
-def element_choice():
-    secret = 0
+def secret_ending():
+    clear()
+    print("Unlocking Secret")
+    sleep(0.5)
+    clear()
+    print("Unlocking Secret.")
+    sleep(0.5)
+    clear()
+    print("Unlocking Secret..")
+    sleep(0.5)
+    clear()
+    print("Unlocking Secret...")
+    sleep(0.5)
+    clear()
+    print("ERROR: OVERFLOW")
+    sleep(0.35)
+def element_choice(secret):
     print("(1) GOSUB/RETURN/POP")
     print("(2) Basic I/O, IF/THEN")
     print("(3) Fibbonacci Sequence")
@@ -261,30 +279,34 @@ def element_choice():
     print("(19) DOS WRITE/APPEND")
     print("(20) ONERR ... RESUME")
     print("(21) CHR$ Tests")
-    try:
-        choice = int(input("Enter option: "))
-    except ValueError:
-        return(ValueError)
-    print("You chose:", choice)
+    while True:
+        try:
+            choice = int(input("Enter option: "))
+            break
+        except ValueError:
+            print("?REENTER")
     if choice == -1:
         print("You have unlocked the bonus demos! These aren't in the origional demo but we have decided to add it anyway!")
         print("(1) blackjack")
         print("(2) Nim")
-        try:
-            choice = int(input("Enter option: "))
-        except ValueError:
-            return(ValueError)
+        while True:
+            try:
+                choice = int(input("Enter option: "))
+                break
+            except ValueError:
+                print("?REENTER")
         print("You chose:", choice)
         if choice == 1:
             blackjack_secret_1()
-            choice = "secret"
             secret = 1
-            return(0)
-        if choice == 2:
+            return(secret)
+        elif choice == 2:
             nim_secret_2()
-            choice = "secret"
-            return(0)
+            secret = 1
+            return(secret)
         else:
+            if secret == 1:
+                secret_ending()
             exit()
     if choice == 0:
         exit("Ended")
@@ -330,14 +352,10 @@ def element_choice():
         pass
     elif choice == 21:
         pass
-    elif choice == "secret":
-        print("you are sus")
-        exit(0)
     else:
         if secret == 1:
-            print("seecart unlokned")
-            time.sleep(0.05)
+            secret_ending()
         exit()
 while True:
-    element_choice()
+    secret = element_choice(secret)
     clear()
