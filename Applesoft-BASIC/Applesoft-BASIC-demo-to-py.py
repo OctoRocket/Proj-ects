@@ -87,10 +87,12 @@ def fibbonocci_3():
 def basic_io_2():
     clear()
     print("at line 200")
-    try:
-        A = input("Pick a number: ")
-    except ValueError:
-        print("?REENTER")
+    while True:
+        try:
+            A = int(input("Pick a number: "))
+            break
+        except ValueError:
+            print("?REENTER")
     print(A)
     if A==A:
         print("TRUE")
@@ -287,7 +289,7 @@ def element_choice(secret):
             print("?REENTER")
     if choice == -1:
         print("You have unlocked the bonus demos! These aren't in the origional demo but we have decided to add it anyway!")
-        print("(1) blackjack")
+        print("(1) BlackJack")
         print("(2) Nim")
         while True:
             try:
