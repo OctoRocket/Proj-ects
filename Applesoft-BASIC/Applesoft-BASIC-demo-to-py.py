@@ -288,6 +288,7 @@ def element_choice(secret):
         except ValueError:
             print("?REENTER")
     if choice == -1:
+        clear()
         print("You have unlocked the bonus demos! These aren't in the origional demo but we have decided to add it anyway!")
         print("(1) BlackJack")
         print("(2) Nim")
@@ -361,3 +362,4 @@ def element_choice(secret):
 while True:
     secret = element_choice(secret)
     clear()
+#susy q-ball
