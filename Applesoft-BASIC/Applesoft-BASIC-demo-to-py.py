@@ -333,27 +333,7 @@ def element_choice(secret):
         pass
     elif choice == 10:
         madlibs_10()
-    elif choice == 11:
-        pass
-    elif choice == 12:
-        pass
-    elif choice == 13:
-        pass
-    elif choice == 14:
-        pass
-    elif choice == 15:
-        pass
-    elif choice == 16:
-        pass
-    elif choice == 17:
-        pass
-    elif choice == 18:
-        pass
-    elif choice == 19:
-        pass
-    elif choice == 20:
-        pass
-    elif choice == 21:
+    elif choice >= 11 <= 21:
         pass
     else:
         if secret == 1:
